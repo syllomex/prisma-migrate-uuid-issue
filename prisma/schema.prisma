@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                   String @id @db.Uuid
+  phoneNumberCountryId String @default("0198659e-d8f4-7fa7-9e8c-0e988020be6d") @db.Uuid
+}
